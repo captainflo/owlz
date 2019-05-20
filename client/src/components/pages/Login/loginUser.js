@@ -13,9 +13,7 @@ class LoginUser extends Component {
     
       // function onclick login
       login=()=>{
-        
         event.preventDefault();
-
         if(this.state.email === "" || this.state.password === ""){     
           alert("Invalid Credentials");
         }
@@ -26,12 +24,17 @@ class LoginUser extends Component {
             API.loginUser(registerBody)
             .then((data)=>{
               console.log(data);
-              const user = data.data.id;
+              if(data.data === null){
+                alert("Email or Password wrong!");
+                this.setState({waitingForServer:false});
+              }else{
+                const user = data.data.id;
               this.setState({userId:user});
               this.props.onRegister(user);
               localStorage.setItem("user", user)
               this.props.history.push(`/dashboard/${user}`);
               window.location.reload();
+              }
             })
           })
         }
@@ -54,11 +57,11 @@ class LoginUser extends Component {
                 <form className="form-log slideUp">
                     <h1 className="text-center">Login User</h1>
                     <div className="form-group">
-                    <label for="exampleInputEmail">Email address</label>
+                    <label htmlFor="exampleInputEmail">Email address</label>
                     <input disabled={this.state.waitingForServer} onChange={this.handleType} name="email" type="email" className="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter email"/>
                     </div>
                     <div className="form-group">
-                    <label for="InputPassword">Password</label>
+                    <label htmlFor="InputPassword">Password</label>
                     <input disabled={this.state.waitingForServer} onChange={this.handleType} name="password" type="password" className="form-control" id="InputPassword" placeholder="Password"/>
                     </div>
                     <button disabled={this.state.waitingForServer} onClick={this.login} type="submit" className="btn-login">Submit</button>

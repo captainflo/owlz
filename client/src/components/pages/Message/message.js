@@ -29,6 +29,10 @@ class Message extends Component {
       this.setState({waitingForServer:true},()=>{
         API.createMessage(registerBody)
         .then((data)=>{
+          console.log()
+          console.log(data.UserId)
+          const userId = data.data.UserId
+          this.props.history.push(`/dashboard/${userId}`);
         })
       })
     }
@@ -75,8 +79,8 @@ class Message extends Component {
               <textarea disabled={this.state.waitingForServer} onChange={this.handleType} name="message" type="text" className="form-control" id="exampleInputMessage"  placeholder="Hello we want yacht for tonight..."/>
             </div>
             <div className="modal-footer">
-            <button type="button" className="btn-login" data-dismiss="modal">Close</button>
-            <button disabled={this.state.waitingForServer} onClick={this.createMessage} type="submit" data-dismiss="modal" className="btn-login">Submit</button>
+              <button type="button" className="btn-login" data-dismiss="modal">Close</button>
+              <button disabled={this.state.waitingForServer} onClick={this.createMessage} type="submit" data-dismiss="modal" className="btn-login">Submit</button>
             </div>
           </form>
       </div>

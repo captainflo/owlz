@@ -87,12 +87,8 @@ class Home extends Component {
           <img src={Barre} alt="Logo" />
         </div>
       </div>
-
-      
       <div className="container text-center">
-        <div ClassName="row">
         <Slick/>
-        </div>
       </div>
       <Footer/>
       </div>
