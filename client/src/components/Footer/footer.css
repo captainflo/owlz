@@ -1,0 +1,24 @@
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////// Footer //////////////////////////////////////////////////// */
+.footer{
+margin-top: 60px;
+height: 100px;
+background-color: black;
+color: #fff;
+}
+
+.footer a{
+  color: #fff;
+}
+
+.footer a:hover{
+  text-decoration: none;
+}
+
+.footer ul{
+  padding-top: 10px;
+}
+
+.fa-instagram , .fa-facebook-f, .fa-twitter{
+  font-size: 30px;
+} 

@@ -1,0 +1,40 @@
+{
+  "name": "owlz",
+  "version": "1.0.0",
+  "description": "## Overview An app that scrapes articles from the New York Times website and lets users save articles and leave comments on the latest news.",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/captainflo/owlz.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
+  },
+  "bugs": {
+    "url": "https://github.com/captainflo/owlz/issues"
+  },
+  "homepage": "https://github.com/captainflo/owlz#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "if-env": "^1.0.4",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "mysql2": "^1.6.5",
+    "react-slick": "^0.24.0",
+    "sequelize": "^5.6.1",
+    "slick-carousel": "^1.8.1"
+  }
+}
