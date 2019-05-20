@@ -1,18 +1,24 @@
-.jumbotron-about {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/luxury-party.jpg") !important;
+.jumbotron-contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../images/eleven.jpg") !important;
     height: 250px !important;
-    background-position-y: -257px;
+
+
   }
 
-  .text-about{
-    margin-bottom: 80px;
+  .jumbotron-contact h1{
+      margin-top: 30px;
   }
-  .text-about h1{
+
+  .text-contact{
+    margin-bottom: 80px;
+    font-size: 25px;
+  }
+  .text-contact h1{
     margin-bottom: 40px;
     font-weight: 300;
   }
 
-  .image-about img{
+  .image-contact img{
     margin-top: 13%;
     max-width: 100%;
     margin-left: auto;
@@ -24,13 +30,10 @@
   }
 
   @media only screen and (max-width: 600px) {
-    .image-about img{
-        margin-top: 0%;
-        margin-bottom: 20px;
+    .jumbotron-contact{
+        background-position-y: 0px !important;
+ 
     }
 
-    .barre {
-        margin-top: 30px;
-        margin-bottom: -50px;
-    }
+
   }

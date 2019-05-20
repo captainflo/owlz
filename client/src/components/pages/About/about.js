@@ -3,8 +3,8 @@ import './about.css'
 import Image1 from '../../images/skyline.jpg'
 import Footer from '../../Footer/footer'
 import Barre from '../../images/barre.png';
-class Home extends React.Component {
 
+class About extends React.Component {
   render() {
     return (
       <div>
@@ -44,4 +44,4 @@ class Home extends React.Component {
 
 }
 
-export default Home;
+export default About;
