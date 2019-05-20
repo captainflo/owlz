@@ -121,9 +121,12 @@
 }
 
 .validate{
-  background-color: #282828;
-  color: #fff;
+  background-color: #fff;
+  color: #282828;
   padding: 10px;
+  border: 2px solid#DAA520;
+  width: 100%;
+
 }
 
 .validate-promoter{
